@@ -1,2 +1,2 @@
 # EDL
-Estrutura de Linguagens
+Estrutura de Linguagens - UERJ
