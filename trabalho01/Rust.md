@@ -8,5 +8,5 @@ Trabalho Rust<br>
 <h3>3-Classificação</h3>
 <p>Rust é uma linguagem orientada a objetos, estruturada, imperativa, concorrente e funcional com tipagem estática, forte e inferida.</p>
 <h3>-Referência bibliográfica</h3>
-<p>![]https://www.ibm.com/developerworks/br/library/os-developers-know-rust/index.html<br>
-![]https://pt.wikipedia.org/wiki/Rust_(linguagem_de_programa%C3%A7%C3%A3o)</p>
+<p>https://www.ibm.com/developerworks/br/library/os-developers-know-rust/index.html<br>
+https://pt.wikipedia.org/wiki/Rust_(linguagem_de_programa%C3%A7%C3%A3o)</p>
