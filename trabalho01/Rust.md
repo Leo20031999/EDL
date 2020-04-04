@@ -1,4 +1,4 @@
-Trabalho Rust<br>
+<h1>Trabalho Rust</h1><br>
 ![](https://www.google.com/search?q=rust+language+LOGO&rlz=1C1GIWA_enBR669BR669&tbm=isch&source=iu&ictx=1&fir=3ZHlyNc363MFHM%253A%252CqtPGxj_qhAHW_M%252C_&vet=1&usg=AI4_-kSJVMDtPJ_yJA5T6MSbWY2DRYj79A&sa=X&ved=2ahUKEwjVpqagvs_oAhWJD7kGHaFsCqgQ9QEwA3oECAEQHg#imgrc=3ZHlyNc363MFHM:)
 <p>Integrantes: Caio Luiz Alonso Santana, Leonardo Fridman Bacellar</p>
 <h3>1-Introdução</h3>
