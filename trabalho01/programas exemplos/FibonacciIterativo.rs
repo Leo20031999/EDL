@@ -6,7 +6,7 @@ fn main(){
 	match io::stdin().read_line(&mut input){
 		Ok(__) => {},
 		Err(_e) => {println!("Erro na leitura de dados\n")},
-											}
+	}
 	n = input.trim().parse::<u64>().unwrap();
 	println!("Sequencia:\n");
 	for i in 0..n {
