@@ -1,8 +1,13 @@
-struct Circulo{
+pub struct Circulo{
 	raio : f32,
 }
 
 impl Circulo{
+	pub fn new(raio: f32) -> Circulo{
+		Circulo{
+			raio: raio,
+		}
+	}
 	pub fn calcula_raio(&self) -> f32{
 		return 2.0 * self.raio * 3.14;
 	}
@@ -10,7 +15,7 @@ impl Circulo{
 
 
 fn main(){
-	let c = Circulo{raio : 4.2};
-	println!("{} ",c.calcula_raio());
+	let c = Circulo::new(4.2);
+	print!("Area: {}", c.calcula_raio());
 }
 
