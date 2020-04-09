@@ -9,8 +9,21 @@
 
 <h3>3-Classificação</h3><p>Rust é uma linguagem orientada a objetos, estruturada, imperativa, concorrente e funcional com tipagem estática, forte e inferida.</p>
 <h3>4-Exemplos comparativos</h3><p>-Java vs Rust(Cálculo da área de um círculo)</p>
-![](Circulo-java.PNG)<br>
-![](Circulo-rust.png)
+'''
+public class Circle{
+	float raio;
+	public Circle(float raio){
+		this.raio=raio;
+	}
+	float area(){
+		return (this.raio)*(float)3.14;
+	}
+	public static void main(String args[]){
+		Circle c=new Circle((float)4.3);
+		System.out.println("Raio: " + c.area());
+	}
+}
+'''
 <p>As diferenças de Rust para Java nesse código é que em Rust, os métodos e os campos são declarados em blocos diferentes.</p>
 <h3>-Referência bibliográfica</h3>
 <p>https://www.ibm.com/developerworks/br/library/os-developers-know-rust/index.html<br>
