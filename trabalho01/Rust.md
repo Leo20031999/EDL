@@ -105,6 +105,36 @@
 
 	let mut v:i32;//um exemplo de variável mutável
 
+<h3>Macros</h3>
+<p>O programa a seguir cria dois HashMaps, um com elementos pares e chaves ímpares e vice-versa, na linguagem Rust.</p>
+
+	use std::collections::HashMap;
+	macro_rules! vet{
+		($id: ident -> [$start: expr ; $end: expr], $cond: expr) => {
+			{
+				let mut map:HashMap<i32,i32>=HashMap::new();
+				for num in $start..$end+1{
+					if $cond(num){
+						map.insert(num-1,num);
+					}
+				}
+				map
+			}
+		};
+	}
+	fn par(x:i32) -> bool{
+		x%2==0
+	}
+	fn imp(x:i32) -> bool{
+		x%2!=0
+	}
+	fn main(){
+		let v = vet![x -> [1;10], par];
+		print!("HashPar: {:?}\n", v);
+		let a = vet![y -> [1;10], imp];
+		print!("HashImpar: {:?}",a);
+	}
+
 <h3>-Referência bibliográfica</h3>
 <p>https://www.ibm.com/developerworks/br/library/os-developers-know-rust/index.html<br>
 https://pt.wikipedia.org/wiki/Rust_(linguagem_de_programa%C3%A7%C3%A3o)</p>
