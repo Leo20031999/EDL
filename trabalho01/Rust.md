@@ -105,7 +105,13 @@
 
 	let mut v:i32;//um exemplo de variável mutável
 
-<h3>Macros</h3>
+<h3>4-Macros</h3>
+<h4>-O que é Macros?</h4>
+<p>Macro é uma especialidade do Rust que lhe oferece uma forma de criar o seu próprio código ou sintaxe, conhecida como metaprogramação. O uso de macros como println! ou print!, que lhe permite imprimir textos na saída do programa, e vec!, que permite o programador inicializar um vetor, são alguns exemplos dessa funcionalidade. A metaprogramação é útil para reduzir o tamanho do código que o programador escreve, papel semelhante às funções, contudo a metaprogramação com as macros em Rust tem suas especialidades.</p>
+<p>Uma assinatura de função deve declarar o número e o tipo de parâmetros que a função tem, macros, por outro lado, pode aceitar um número variável de parâmetros. Entretanto, o lado negativo de usar macro ao invés de função é que as macros são mais complexas do que declarar funções, porque o programador "está escrevendo Rust que sobrescreve código de Rust". Portanto, macros, em sua grande maioria, são mais difíceis de entender e ler seus códigos.</p>
+<h4>-Origens e influências</h4>
+<p>As implementações mais amplamente utilizadas de macros sintáticas são encontradas em linguagens semelhantes a LISP. Linguagens como C e Assembly usam macros simples, implementados como pré-processadores no compilador ou montador. Em C, por exemplo, as macros funcionam pela simples busca e substituição de texto no código fonte.</p>
+<p>Em dialetos da linguagem LISP(List Processing, ou processamento de lista, em inglês), como Common Lisp e Scheme, são um pouco mais elaborados e complexos. As macros nesses dialetos agem como funções que transformam o texto do programa, usando a própria linguagem para expressar estas transformações.</p>
 <p>O programa a seguir cria dois HashMaps, um com elementos pares e chaves ímpares e vice-versa, na linguagem Rust.</p>
 
 	use std::collections::HashMap;
@@ -134,7 +140,48 @@
 		let a = vet![y -> [1;10], imp];
 		print!("HashImpar: {:?}",a);
 	}
-
+<p> Agora, o mesmo programa na linguagem JAVA</p>
+	
+	import java.util.HashMap;
+	public class Macrom{
+		int limit;
+		HashMap<Integer,Integer> mapap=new HashMap<Integer,Integer>();
+		HashMap<Integer,Integer> mapai=new HashMap<Integer,Integer>();
+		public Macrom(int limit){
+			this.limit=limit;
+		}
+		void par(int value){
+			if(value%2==0){
+				mapap.put(value-1, value);
+			}
+		}
+		void impar(int value){
+			if(value%2!=0){
+				mapai.put(value-1,value);
+			}
+		}
+		void imprime(){
+			System.out.println("HashMap Par: (chave, valor)->"+mapap);
+			System.out.println("HashMap Impar: (chave, valor)->"+mapai);
+		}
+		public static void main(String args[]){
+			int limit=10;
+			int value=1;
+			Macrom m=new Macrom(limit);
+			for(value=1;value<=limit;value++){
+				m.par(value);
+				m.impar(value);
+			}
+			m.imprime();
+		}
+	}
+<p>Como podemos ver, na função main do Rust foi usado a macro personalizada vet para usar o array de vetores para organizar o HashMap, assim reduzindo bastante a quantidade de linhas. Em JAVA, por outro lado, teve que usar o método de classe para diminuir a quantidade de código.</p>
 <h3>-Referência bibliográfica</h3>
 <p>https://www.ibm.com/developerworks/br/library/os-developers-know-rust/index.html<br>
-https://pt.wikipedia.org/wiki/Rust_(linguagem_de_programa%C3%A7%C3%A3o)</p>
+https://pt.wikipedia.org/wiki/Rust_(linguagem_de_programa%C3%A7%C3%A3o)<br>
+https://doc.rust-lang.org/book/ch19-06-macros.html<br>
+https://medium.com/@phoomparin/a-beginners-guide-to-rust-macros-5c75594498f1<br>
+https://doc.rust-lang.org/reference/influences.html<br>
+https://en.wikipedia.org/wiki/Macro_(computer_science)<br>
+https://pt.wikipedia.org/wiki/Macro#Macros_de_programa%C3%A7%C3%A3o<br>
+https://pt.wikipedia.org/wiki/Lisp<br></p>
