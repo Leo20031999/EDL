@@ -176,6 +176,79 @@
 		}
 	}
 <p>Como podemos ver, na função main do Rust foi usado a macro personalizada vet para usar o array de vetores para organizar o HashMap, assim reduzindo bastante a quantidade de linhas. Em JAVA, por outro lado, teve que usar o método de classe para diminuir a quantidade de código.</p>
+<h3>5-Lifetime</h3>
+<p>Rust é uma linguagem que se propõe a ter foco em segurança em relação à memória e a ser veloz,ela consegue isto através do sistema de ownership,cujo engloba lifetime, e que garante que não haverá mais de uma referência apontando para o mesmo local na memória e que assim que uma variável deixar de ser usada ao decorrer do programa a memória consumida por ela será liberada automaticamente.À primeira vista o conceito de lifetime em rust pode parecer bastante com o de garbage collector.</p>
+<h4>-Garbage Collector</h4>
+<p>Garbage collector surgiu em 1959 e começou a ser implementada em Lisp com o propósito de aumentar a produtividade dos desenvolvedores,visto que eles não necessitariam gerenciar memória manualmente,apesar de este conceito se assemelhar com o de lifetime eles diferem em alguns pontos.Primeiramente pelo fato de que o compilador em rust ser quem analisa o código,portanto não interfere na velocidade da execução do código diferentemente do garbage collector que decide se deve desalocar memória ou não em tempo de execução.Difere também pelo fato do garbage collector não desalocar memória que não será mais usada ao decorrer do programa,ele desaloca apenas espaços de memória para os quais não exista mais uma referência para eles.</p>
+<p>-C++ vs Rust</p>
+<p>-Rust</p>
+
+	struct Pessoa{
+		nome: String,
+		idade: u16,
+	}
+
+	fn main(){
+		let  mut v : Vec<Pessoa> = Vec::new();
+		v.push(Pessoa{nome : "Fernando".to_string(),idade : 39,});
+		v.push(Pessoa{nome : "Bianca".to_string(),idade : 45,});
+		v.push(Pessoa{nome : "Joao".to_string(),idade : 48,});
+		let maior = verifica_idade(&v);
+		println!("{}",maior.idade);
+	}
+
+	fn verifica_idade<'a>(v: &'a Vec<Pessoa>) -> &'a Pessoa{ 
+		let mut maior_Pessoa: &Pessoa = v.first().unwrap();
+		let mut maior_idade = maior_Pessoa.idade;
+		for p in v{
+			if p.idade > maior_idade{
+				maior_idade = p.idade;
+				maior_Pessoa = p;
+									 }
+				   }
+		return maior_Pessoa;
+	}
+<p>-C++</p>
+
+	    #include<vector>
+	    #include<iostream>
+	    using namespace std;
+
+	    struct Pessoa{
+		int idade;
+		string nome;
+	    };
+	    Pessoa* verifica_idade(vector<Pessoa> *v);
+
+	    int main(){
+		vector<Pessoa> v;
+		Pessoa p;
+		p.idade = 39;
+		p.nome = "Fernando";
+		v.push_back(p);
+		p.idade = 45;
+		p.nome = "Bianca";
+		v.push_back(p);
+		p.idade = 48;
+		p.nome = "Joao";
+		v.push_back(p);
+		Pessoa e = verifica_idade(&v);
+		cout << (e).idade << endl;
+		return 0;
+	    }
+
+	    Pessoa* verifica_idade(vector<Pessoa> *v){
+		Pessoa maior_pessoa = &(v->front());
+		int maior_idade = (maior_pessoa).idade;
+		vector<Pessoa>::iterator it;
+		for(it = v->begin();it != v->end();it++){
+		    if((*it).idade > maior_idade){
+			maior_pessoa = (it);
+			maior_idade = (*it).idade;
+		    }
+		}
+		return maior_pessoa;
+	    }
 <h3>-Referência bibliográfica</h3>
 <p>https://www.ibm.com/developerworks/br/library/os-developers-know-rust/index.html<br>
 https://pt.wikipedia.org/wiki/Rust_(linguagem_de_programa%C3%A7%C3%A3o)<br>
