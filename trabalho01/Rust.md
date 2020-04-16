@@ -259,4 +259,8 @@ https://en.wikipedia.org/wiki/Macro_(computer_science)<br>
 https://pt.wikipedia.org/wiki/Macro#Macros_de_programa%C3%A7%C3%A3o<br>
 https://pt.wikipedia.org/wiki/Lisp<br>
 https://doc.rust-lang.org/1.9.0/book/lifetimes.html<br>
-https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)<br></p>
+https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)<br>
+https://www.ibm.com/developerworks/br/library/os-developers-know-rust/index.html<br>
+https://pt.wikipedia.org/wiki/Rust_(linguagem_de_programa%C3%A7%C3%A3o)<br>
+https://doc.rust-lang.org/1.9.0/book/lifetimes.htmlhttps://en.wikipedia.org/wiki/Garbage_collection_(computer_science)<br>
+</p>
