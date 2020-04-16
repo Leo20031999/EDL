@@ -243,7 +243,7 @@
 		vector<Pessoa>::iterator it;
 		for(it = v->begin();it != v->end();it++){
 		    if((*it).idade > maior_idade){
-			maior_pessoa = (it);
+			maior_pessoa = (*it);
 			maior_idade = (*it).idade;
 		    }
 		}
