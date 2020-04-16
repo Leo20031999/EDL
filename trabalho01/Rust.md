@@ -257,4 +257,6 @@ https://medium.com/@phoomparin/a-beginners-guide-to-rust-macros-5c75594498f1<br>
 https://doc.rust-lang.org/reference/influences.html<br>
 https://en.wikipedia.org/wiki/Macro_(computer_science)<br>
 https://pt.wikipedia.org/wiki/Macro#Macros_de_programa%C3%A7%C3%A3o<br>
-https://pt.wikipedia.org/wiki/Lisp<br></p>
+https://pt.wikipedia.org/wiki/Lisp<br>
+https://doc.rust-lang.org/1.9.0/book/lifetimes.html<br>
+https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)<br></p>
